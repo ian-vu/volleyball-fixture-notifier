@@ -24,7 +24,9 @@ class MessageGenerator:
         table = Table(cells)
         parser = FixtureParser(table)
 
-        return f"This weeks game {parser.date()} at {parser.team_time(TEAM_NAME)} on court {parser.court(TEAM_NAME)}"
+        return f"This weeks game {parser.date()} at {parser.team_time(TEAM_NAME)}" \
+               f" on court {parser.court(TEAM_NAME)}"
 
     def _html_row_contents(self, html_row: Tag) -> list[Any]:
-        return [html_column.text.strip() for html_column in html_row.findAll(['th', 'td'])]
+        return [html_column.text.strip() for html_column in
+                html_row.findAll(['th', 'td'])]

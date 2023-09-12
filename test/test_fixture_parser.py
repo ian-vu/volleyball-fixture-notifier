@@ -2,12 +2,17 @@ from FixtureParser import FixtureParser
 from Table import Table
 
 mock_table = Table([['DATE: 29/08/23', '1', '2', '3', '4', '5', '6'],
-                    ['6:45 PM', 'YOURS, MINE, SORRY!\nV\nBLOCK PARTY', 'JERRY + HUDO\nV\nDAVID + GOLIATH',
-                     'BAREFOOT BALLERS\nV\nBIG SITUATION', 'SERVES YOU RIGHT\nV\nI DON’T LIKE SAND', '', ''],
-                    ['7:30 PM', 'APPA YIP YIP\nV\nBAMYAN', 'QUICK FINISHERS\nV\nSOMETIMES GOOD AND SHIT',
+                    ['6:45 PM', 'YOURS, MINE, SORRY!\nV\nBLOCK PARTY',
+                     'JERRY + HUDO\nV\nDAVID + GOLIATH',
+                     'BAREFOOT BALLERS\nV\nBIG SITUATION',
+                     'SERVES YOU RIGHT\nV\nI DON’T LIKE SAND', '', ''],
+                    ['7:30 PM', 'APPA YIP YIP\nV\nBAMYAN',
+                     'QUICK FINISHERS\nV\nSOMETIMES GOOD AND SHIT',
                      'THE SOLI-MEN\nV\nHOES', 'PORK BELLY BOIS\nV\nTEAM PLS', '', ''],
-                    ['8:15 PM', 'DIG, SET, LOSE\nV\nHOW I SET YOUR MOTHER', 'TIGHT + DRY\nV\nF.I.',
-                     'BRENTWOOD RANGERS\nV\nSUPER SPIKE BROS', 'GOLD DIGGERS\nV\nBALLBUSTERS', '', '']])
+                    ['8:15 PM', 'DIG, SET, LOSE\nV\nHOW I SET YOUR MOTHER',
+                     'TIGHT + DRY\nV\nF.I.',
+                     'BRENTWOOD RANGERS\nV\nSUPER SPIKE BROS',
+                     'GOLD DIGGERS\nV\nBALLBUSTERS', '', '']])
 
 mock_fixture_parser = FixtureParser(mock_table)
 

@@ -2,6 +2,10 @@ from Table import Table
 
 
 class FixtureParser:
+    """
+    Derive fixture data from table
+    """
+
     def __init__(self, table: Table):
         self._table = table
 

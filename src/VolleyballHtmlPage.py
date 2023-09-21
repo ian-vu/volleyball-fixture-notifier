@@ -4,6 +4,12 @@ VOLLEYBALL_URL = "https://reboundibv.com.au/fixture"
 
 
 class VolleyballHtmlPage:
+    """
+    Holds the contents of the Volleyball fixture HTML page.
+    This class allows for dependency injection for testing. By default it will make a HTTP request
+    to get the contents.
+    """
+
     def __init__(self, contents: str | None = None):
         self.contents = contents if contents else self._request_content()
 

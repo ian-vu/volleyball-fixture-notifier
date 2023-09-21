@@ -11,3 +11,9 @@ lint-check:
 
 lint-fix:
 	ruff check --fix .
+
+test-unit:
+	pytest test/unit
+
+test-all:
+	pytest

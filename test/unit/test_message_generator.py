@@ -17,4 +17,4 @@ def test_message_generator_message():
     mock_html_page = VolleyballHtmlPage(mock_html_page_content)
 
     assert MessageGenerator().generate_message(mock_html_page) \
-           == "This weeks game DATE: 29/08/23 at 6:45 PM on court 3"
+           == "This week's game DATE: 29/08/23 at 6:45 PM on court 3"

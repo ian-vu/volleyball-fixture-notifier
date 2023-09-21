@@ -22,7 +22,7 @@ class MessageGenerator:
         table = self._html_page_to_table(html_page)
         parser = FixtureParser(table)
 
-        return f"This weeks game {parser.date()} at {parser.team_time(TEAM_NAME)}" \
+        return f"This week's game {parser.date()} at {parser.team_time(TEAM_NAME)}" \
                f" on court {parser.court(TEAM_NAME)}"
 
     def _html_page_to_table(self, html_page: VolleyballHtmlPage):

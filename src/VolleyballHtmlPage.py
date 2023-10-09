@@ -1,5 +1,8 @@
 import requests
 
+from utils.logger import get_logger
+
+logger = get_logger()
 VOLLEYBALL_URL = "https://reboundibv.com.au/fixture"
 
 
@@ -14,6 +17,7 @@ class VolleyballHtmlPage:
         self.contents = contents if contents else self._request_content()
 
     def _request_content(self) -> str:
+        logger.info("Fetching HTTP content...")
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
                           " AppleWebKit/537.36 (KHTML, like Gecko)"
@@ -25,4 +29,5 @@ class VolleyballHtmlPage:
                             f" {VOLLEYBALL_URL}. Status code: {status_code}."
                             f" Content: {response.content}")
 
+        logger.info("Successfully fetched content")
         return response.content

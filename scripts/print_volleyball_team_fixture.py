@@ -22,10 +22,9 @@ TEAM_NAME = "TICKLE"
 
 if __name__ == "__main__":
     parser = ArgumentParser(
-        prog=__file__,
-        description="Print name volleyball time fixture for a team."
+        prog=__file__, description="Print name volleyball time fixture for a team."
     )
-    parser.add_argument('-v', '--verbose', action=BooleanOptionalAction, default=False)
+    parser.add_argument("-v", "--verbose", action=BooleanOptionalAction, default=False)
     args = parser.parse_args()
 
     set_log_level(args.verbose, logger)

@@ -2,12 +2,12 @@ import pytest
 
 from Table import Table, OutOfBoundsException, NotFoundException
 
-mock_table = Table([['0', '1', '2'], ['3', '4', '5']])
+mock_table = Table([["0", "1", "2"], ["3", "4", "5"]])
 
 
 def test_row_heading():
-    assert mock_table.row_heading(0) == '0'
-    assert mock_table.row_heading(1) == '3'
+    assert mock_table.row_heading(0) == "0"
+    assert mock_table.row_heading(1) == "3"
 
 
 def test_row_heading_raises_if_invalid_row_idx():
@@ -16,9 +16,9 @@ def test_row_heading_raises_if_invalid_row_idx():
 
 
 def test_column_heading():
-    assert mock_table.column_heading(0) == '0'
-    assert mock_table.column_heading(1) == '1'
-    assert mock_table.column_heading(2) == '2'
+    assert mock_table.column_heading(0) == "0"
+    assert mock_table.column_heading(1) == "1"
+    assert mock_table.column_heading(2) == "2"
 
 
 def test_row_heading_raises_if_invalid_column_idx():

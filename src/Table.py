@@ -47,6 +47,8 @@ class NotFoundException(Exception):
 
 class OutOfBoundsException(Exception):
     def __init__(self, table: Table, idx: int):
-        super().__init__(f"Out of bounds exception."
-                         f" Index: {idx} is not within table rows: {table.num_rows()}"
-                         f" or columns: {table.num_columns()}")
+        super().__init__(
+            f"Out of bounds exception."
+            f" Index: {idx} is not within table rows: {table.num_rows()}"
+            f" or columns: {table.num_columns()}"
+        )

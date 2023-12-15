@@ -2,15 +2,15 @@ setup:
 	pip install -r requirements.txt
 
 setup-dev:
-	pip install -r requirements.txt
+	pip install -r dev-requirements.txt
 
 setup-all: setup setup-dev
 
-lint-check:
-	ruff check .
+format-check:
+	black --check .
 
-lint-fix:
-	ruff check --fix .
+format:
+	black .
 
 test-unit:
 	pytest test/unit

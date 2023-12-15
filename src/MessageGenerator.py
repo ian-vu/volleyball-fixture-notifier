@@ -2,11 +2,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup, Tag
 
-from FixtureParser import FixtureParser
-from Table import Table
-from VolleyballHtmlPage import VolleyballHtmlPage
-
-TEAM_NAME = "I DON’T LIKE SAND"
+from .FixtureParser import FixtureParser
+from .Table import Table
+from .VolleyballHtmlPage import VolleyballHtmlPage
 
 
 class MessageGenerator:

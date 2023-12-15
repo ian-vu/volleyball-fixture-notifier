@@ -1,4 +1,4 @@
-from Table import Table
+from .Table import Table
 
 
 class FixtureParser:

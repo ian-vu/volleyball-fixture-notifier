@@ -1,6 +1,6 @@
 import requests
 
-from utils.logger import get_logger
+from .utils.logger import get_logger
 
 logger = get_logger()
 VOLLEYBALL_URL = "https://reboundibv.com.au/fixture"

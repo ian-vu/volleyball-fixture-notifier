@@ -1,7 +1,7 @@
 from argparse import ArgumentParser, BooleanOptionalAction
 
-from MessageGenerator import MessageGenerator
-from utils.logger import get_logger, LogLevel, Logger
+from src.MessageGenerator import MessageGenerator
+from src.utils.logger import get_logger, LogLevel, Logger
 
 logger = get_logger()
 

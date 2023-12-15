@@ -17,3 +17,6 @@ test-unit:
 
 test-all:
 	pytest
+
+run:
+	python -m scripts.print_volleyball_team_fixture

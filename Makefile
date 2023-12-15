@@ -2,9 +2,17 @@ setup:
 	pip install -r requirements.txt
 
 setup-dev:
-	pip install -r dev-requirements.txt
+	pip install pip-tools && pip install -r dev-requirements.txt
 
-setup-all: setup setup-dev
+setup-all: setup-dev setup
+
+upgrade-dev:
+	pip-compile requirements-dev.in --upgrade
+
+upgrade:
+	pip-compile requirements.in --upgrade
+
+upgrade-all: upgrade-dev upgrade
 
 format-check:
 	black --check .

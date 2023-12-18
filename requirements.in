@@ -6,3 +6,5 @@ requests
 soupsieve
 urllib3
 aws-lambda-typing
+boto3-stubs
+boto3

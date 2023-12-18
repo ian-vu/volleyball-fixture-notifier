@@ -6,6 +6,14 @@ provider:
   name: aws
   runtime: python3.11
   region: ${opt:region, self:custom.defaults.region}
+  stage: ${opt:stage}
+  iam:
+    role:
+      statements:
+        # Allow for Lambda to publish message to SNS topic
+        - Effect: Allow
+          Action: 'SNS:Publish'
+          Resource: !Ref snsEmailTopic
 
 custom:
   defaults:
@@ -21,3 +29,15 @@ functions:
       # Invoke Lambda function every Sunday at 7pm
       # https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html
       - schedule: cron(0 19 ? * SUN *)
+    environment:
+      SNS_EMAIL_TOPIC: !Ref snsEmailTopic
+
+
+resources:
+  Resources:
+    snsEmailTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${self:service}-sns-email-topic-${self:provider.stage}
+
+

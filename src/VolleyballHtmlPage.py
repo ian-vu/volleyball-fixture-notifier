@@ -1,6 +1,6 @@
 import requests
 
-from .utils.logger import get_logger
+from src.utils.logger import get_logger
 
 logger = get_logger()
 VOLLEYBALL_URL = "https://reboundibv.com.au/fixture"
@@ -20,8 +20,8 @@ class VolleyballHtmlPage:
         logger.info("Fetching HTTP content...")
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-            " AppleWebKit/537.36 (KHTML, like Gecko)"
-            " Chrome/116.0.0.0 Safari/537.36"
+                          " AppleWebKit/537.36 (KHTML, like Gecko)"
+                          " Chrome/116.0.0.0 Safari/537.36"
         }
         response = requests.get(VOLLEYBALL_URL, headers=headers)
 

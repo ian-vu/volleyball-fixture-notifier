@@ -51,13 +51,13 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Run e2e Test for dev stage
         if: github.ref == 'refs/heads/dev'
-        run: ./test/e2e/e2e.sh
+        run: ./test/e2e/e2e.sh dev
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Run e2e Test for prod stage
         if: github.ref == 'refs/heads/prod'
-        run: ./test/e2e/e2e.sh
+        run: ./test/e2e/e2e.sh prod
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

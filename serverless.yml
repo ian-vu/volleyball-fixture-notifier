@@ -41,3 +41,7 @@ resources:
         TopicName: ${self:service}-sns-email-topic-${self:provider.stage}
 
 
+  Outputs:
+    snsEmailTopicArn:
+      Description: Arn of SNS email Topic
+      Value: !Ref snsEmailTopic

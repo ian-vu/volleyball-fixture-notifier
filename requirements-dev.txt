@@ -9,132 +9,19 @@ aiohttp==3.9.1
 aiosignal==1.3.1
     # via aiohttp
 attrs==23.1.0
-    # via
-    #   aiohttp
-    #   cattrs
-    #   jsii
-aws-cdk-asset-awscli-v1==2.2.201
-    # via aws-cdk-lib
-aws-cdk-asset-kubectl-v20==2.1.2
-    # via aws-cdk-lib
-aws-cdk-asset-node-proxy-agent-v6==2.0.1
-    # via aws-cdk-lib
-aws-cdk-assets==0.28.0
-    # via aws-cdk-aws-lambda
-aws-cdk-aws-autoscaling-api==0.28.0
-    # via aws-cdk-aws-sqs
-aws-cdk-aws-cloudwatch==0.28.0
-    # via
-    #   aws-cdk-aws-ec2
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-logs
-    #   aws-cdk-aws-sqs
-    #   aws-cdk-aws-stepfunctions
-aws-cdk-aws-ec2==0.28.0
-    # via aws-cdk-aws-lambda
-aws-cdk-aws-events==0.28.0
-    # via
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-stepfunctions
-aws-cdk-aws-iam==0.28.0
-    # via
-    #   aws-cdk-assets
-    #   aws-cdk-aws-autoscaling-api
-    #   aws-cdk-aws-cloudwatch
-    #   aws-cdk-aws-kms
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-logs
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-sqs
-    #   aws-cdk-aws-stepfunctions
-aws-cdk-aws-kms==0.28.0
-    # via
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-sqs
-aws-cdk-aws-lambda==0.28.0
-    # via -r requirements-dev.in
-aws-cdk-aws-logs==0.28.0
-    # via aws-cdk-aws-lambda
-aws-cdk-aws-s3==0.28.0
-    # via
-    #   aws-cdk-assets
-    #   aws-cdk-aws-lambda
-aws-cdk-aws-s3-notifications==0.28.0
-    # via
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-sqs
-aws-cdk-aws-sqs==0.28.0
-    # via aws-cdk-aws-lambda
-aws-cdk-aws-stepfunctions==0.28.0
-    # via aws-cdk-aws-lambda
-aws-cdk-cdk==0.28.0
-    # via
-    #   aws-cdk-assets
-    #   aws-cdk-aws-autoscaling-api
-    #   aws-cdk-aws-cloudwatch
-    #   aws-cdk-aws-ec2
-    #   aws-cdk-aws-events
-    #   aws-cdk-aws-iam
-    #   aws-cdk-aws-kms
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-logs
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-s3-notifications
-    #   aws-cdk-aws-sqs
-    #   aws-cdk-aws-stepfunctions
-aws-cdk-cx-api==0.28.0
-    # via
-    #   aws-cdk-aws-ec2
-    #   aws-cdk-cdk
-aws-cdk-lib==2.115.0
-    # via -r requirements-dev.in
-aws-cdk-region-info==0.28.0
-    # via aws-cdk-aws-iam
+    # via aiohttp
 black==23.12.0
     # via -r requirements-dev.in
-cattrs==23.2.3
-    # via jsii
 click==8.1.7
     # via black
-constructs==10.3.0
-    # via
-    #   -r requirements-dev.in
-    #   aws-cdk-lib
-frozenlist==1.4.0
+frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
 idna==3.6
     # via yarl
-importlib-resources==6.1.1
-    # via jsii
 iniconfig==2.0.0
     # via pytest
-jsii==1.93.0
-    # via
-    #   aws-cdk-asset-awscli-v1
-    #   aws-cdk-asset-kubectl-v20
-    #   aws-cdk-asset-node-proxy-agent-v6
-    #   aws-cdk-assets
-    #   aws-cdk-aws-autoscaling-api
-    #   aws-cdk-aws-cloudwatch
-    #   aws-cdk-aws-ec2
-    #   aws-cdk-aws-events
-    #   aws-cdk-aws-iam
-    #   aws-cdk-aws-kms
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-logs
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-s3-notifications
-    #   aws-cdk-aws-sqs
-    #   aws-cdk-aws-stepfunctions
-    #   aws-cdk-cdk
-    #   aws-cdk-cx-api
-    #   aws-cdk-lib
-    #   aws-cdk-region-info
-    #   constructs
 multidict==6.0.4
     # via
     #   aiohttp
@@ -151,45 +38,7 @@ platformdirs==4.1.0
     # via black
 pluggy==1.3.0
     # via pytest
-publication==0.0.3
-    # via
-    #   aws-cdk-asset-awscli-v1
-    #   aws-cdk-asset-kubectl-v20
-    #   aws-cdk-asset-node-proxy-agent-v6
-    #   aws-cdk-assets
-    #   aws-cdk-aws-autoscaling-api
-    #   aws-cdk-aws-cloudwatch
-    #   aws-cdk-aws-ec2
-    #   aws-cdk-aws-events
-    #   aws-cdk-aws-iam
-    #   aws-cdk-aws-kms
-    #   aws-cdk-aws-lambda
-    #   aws-cdk-aws-logs
-    #   aws-cdk-aws-s3
-    #   aws-cdk-aws-s3-notifications
-    #   aws-cdk-aws-sqs
-    #   aws-cdk-aws-stepfunctions
-    #   aws-cdk-cdk
-    #   aws-cdk-cx-api
-    #   aws-cdk-lib
-    #   aws-cdk-region-info
-    #   constructs
-    #   jsii
 pytest==7.4.3
     # via -r requirements-dev.in
-python-dateutil==2.8.2
-    # via jsii
-six==1.16.0
-    # via python-dateutil
-typeguard==2.13.3
-    # via
-    #   aws-cdk-asset-awscli-v1
-    #   aws-cdk-asset-kubectl-v20
-    #   aws-cdk-asset-node-proxy-agent-v6
-    #   aws-cdk-lib
-    #   constructs
-    #   jsii
-typing-extensions==4.9.0
-    # via jsii
 yarl==1.9.4
     # via aiohttp

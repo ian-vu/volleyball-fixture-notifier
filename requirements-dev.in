@@ -1,5 +1,2 @@
 pytest
 black
-aws-cdk-lib
-constructs
-aws-cdk.aws_lambda

@@ -18,7 +18,7 @@ format-check:
 	black --check .
 
 format:
-	black .
+	black . --extend-exclude=.venv
 
 test-unit:
 	pytest test/unit

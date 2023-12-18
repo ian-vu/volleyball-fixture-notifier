@@ -7,7 +7,7 @@ from aws_lambda_typing.events import SNSEvent
 from src.MessageGenerator import MessageGenerator
 from src.Notifier import Notifier
 
-TEAM_NAME = "TICKLE"
+TEAM_NAME = 'TICKLE'
 
 notifier = Notifier(sns_client=boto3.client("sns"))
 message_generator = MessageGenerator()

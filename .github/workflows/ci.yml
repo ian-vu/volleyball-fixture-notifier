@@ -5,13 +5,14 @@ on:
     branches:
       - main
       - dev
-
   pull_request:
-    contents: read
 
-  concurrency:
-    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
-    cancel-in-progress: true
+permissions:
+  contents: read
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
 
 jobs:
   CI:

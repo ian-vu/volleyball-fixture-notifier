@@ -37,8 +37,8 @@ jobs:
         run: pytest test/unit
       - name: Run Integration Test
         run: pytest test/unit
-      - name: Deploy to ${GITHUB_REF##*/} stage
-        run: sls deploy --verbose --force --stage ${GITHUB_REF##*/}
+      - name: Deploy to ${{ github.base_ref }} stage
+        run: sls deploy --verbose --force --stage ${{ github.base_ref }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

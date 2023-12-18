@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
+      - dev
 
 permissions:
   contents: read
@@ -37,8 +37,9 @@ jobs:
         run: pytest test/unit
       - name: Run Integration Test
         run: pytest test/unit
-      - name: Deploy to ${{ github.base_ref }} stage
-        run: sls deploy --verbose --force --stage ${{ github.base_ref }}
+      - name: Deploy to dev stage
+        if: ${{ github.bash_ref == 'dev' }}
+        run: sls deploy --verbose --force --stage dev
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

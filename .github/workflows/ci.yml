@@ -39,3 +39,6 @@ jobs:
         run: pytest test/unit
       - name: Deploy to ${GITHUB_REF##*/} stage
         run: sls deploy --verbose --force --stage ${GITHUB_REF##*/}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

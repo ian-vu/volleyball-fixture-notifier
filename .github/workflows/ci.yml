@@ -18,7 +18,6 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      - Install Deps
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node

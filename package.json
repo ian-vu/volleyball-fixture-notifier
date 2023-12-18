@@ -1,0 +1,19 @@
+{
+  "name": "volleyball-fixture-notifier",
+  "version": "1.0.0",
+  "description": "```commandline make setup-all ```",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^3.38.0",
+    "serverless-python-requirements": "^6.0.1"
+  }
+}

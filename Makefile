@@ -2,7 +2,7 @@ setup:
 	pip install -r requirements.txt
 
 setup-dev:
-	pip install pip-tools && pip install -r requirements-dev.txt
+	pip install pip-tools && pip install -r requirements-dev.txt && npm install
 
 setup-all: setup-dev setup
 

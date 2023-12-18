@@ -36,9 +36,9 @@ jobs:
       - name: Run Unit Test
         run: pytest test/unit
       - name: Run Integration Test
-        run: pytest test/unit && echo ${{ github.base_ref }}
+        run: pytest test/unit && echo $env.GITHUB_REF_NAME
       - name: Deploy to dev stage
-        if: ${{ github.base_ref == 'dev' }}
+        if: ${{ $env.GITHUB_REF_NAME == 'dev' }}
         run: sls deploy --verbose --force --stage dev
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

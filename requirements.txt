@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements.in
 #
+aws-lambda-typing==2.18.0
+    # via -r requirements.in
 beautifulsoup4==4.12.2
     # via -r requirements.in
 certifi==2023.11.17

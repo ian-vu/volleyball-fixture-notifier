@@ -1,0 +1,19 @@
+service: volleyball-fixture-notifier
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: ${opt:region, self:custom.defaults.region}
+
+custom:
+  defaults:
+    region: ap-southeast-2
+
+functions:
+  cronHandler:
+    handler: src/infra/aws/lambda_handler.run
+    events:
+      # Invoke Lambda function every 2nd minute from Mon-Fri
+      - schedule: cron(0/2 * ? * MON-FRI *)

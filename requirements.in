@@ -5,3 +5,4 @@ idna
 requests
 soupsieve
 urllib3
+aws-lambda-typing

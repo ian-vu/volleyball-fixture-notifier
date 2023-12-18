@@ -4,10 +4,10 @@
 make setup-all
 ```
 
-**Install cdk**
+**Install serverless**
 
 ```commandline
-npm install -g aws-cdk
+npm install -g serverless
 ```
 
 ## How to run

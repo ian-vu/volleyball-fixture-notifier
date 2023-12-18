@@ -2,6 +2,6 @@
 .idea
 __pycache__
 
-# CDK asset staging directory
-cdk/.cdk.staging
-cdk/cdk.out
+.env
+
+.serverless

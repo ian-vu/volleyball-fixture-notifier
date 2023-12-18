@@ -30,7 +30,7 @@ jobs:
           python-version: '3.11'
           cache: pip
       - name: Install Deps
-        run: make setup-dev
+        run: make setup-all
       - name: Check Python file formatting
         run: make format-check
       - name: Run Unit Test

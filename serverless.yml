@@ -11,9 +11,13 @@ custom:
   defaults:
     region: ap-southeast-2
 
+plugins:
+  - serverless-python-requirements
+
 functions:
   cronHandler:
     handler: src/infra/aws/lambda_handler.run
     events:
-      # Invoke Lambda function every 2nd minute from Mon-Fri
-      - schedule: cron(0/2 * ? * MON-FRI *)
+      # Invoke Lambda function every Sunday at 7pm
+      # https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html
+      - schedule: cron(0 19 ? * SUN *)

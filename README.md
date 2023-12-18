@@ -1,3 +1,5 @@
+![CI](https://github.com/ian-vu/volleyball-fixture-notifier/actions/workflows/ci.yml/badge.svg)
+
 ## Set up
 
 ```commandline

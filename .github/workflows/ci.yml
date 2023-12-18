@@ -33,3 +33,7 @@ jobs:
         run: make setup-dev
       - name: Check Python file formatting
         run: make format-check
+      - name: Run Unit Test
+        run: pytest test/unit
+      - name: Run Integration Test
+        run: pytest test/unit

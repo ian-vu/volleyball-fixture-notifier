@@ -1,0 +1,36 @@
+name: 'CI'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+
+  pull_request:
+    contents: read
+
+  concurrency:
+    group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+    cancel-in-progress: true
+
+  jobs:
+    CI:
+      runs-on: ubuntu-latest
+      steps:
+        - Install Deps
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Node
+          uses: actions/setup-node@v3
+          with:
+            node-version: '18.17.1'
+            cache: npm
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.11'
+            cache: pip
+        - name: Install Dev Deps
+          run: make setup-dev
+        - name: Check Python file formatting
+          run: make format-check

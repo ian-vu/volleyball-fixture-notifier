@@ -1,0 +1,63 @@
+name: 'CI'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+
+permissions:
+  contents: read
+
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.1'
+          cache: npm
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install Deps
+        run: make setup-all
+      - name: Check Python file formatting
+        run: make format-check
+      - name: Run Unit Test
+        run: pytest test/unit
+      - name: Run Integration Test
+        run: pytest test/unit && echo $GITHUB_REF_NAME
+      - name: Deploy to dev stage
+        if: github.ref == 'refs/heads/dev'
+        run: sls deploy --verbose --force --stage dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Deploy to prod stage
+        if: github.ref == 'refs/heads/main'
+        run: sls deploy --verbose --force --stage prod
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Run e2e Test for dev stage
+        if: github.ref == 'refs/heads/dev'
+        run: ./test/e2e/e2e.sh dev
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Run e2e Test for prod stage
+        if: github.ref == 'refs/heads/prod'
+        run: ./test/e2e/e2e.sh prod
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

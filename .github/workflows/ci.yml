@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - name: Install Dev Deps
+      - name: Install Deps
         run: make setup-dev
       - name: Check Python file formatting
         run: make format-check
@@ -37,7 +37,5 @@ jobs:
         run: pytest test/unit
       - name: Run Integration Test
         run: pytest test/unit
-      - name: Install Deps
-        run: make setup
       - name: Deploy to ${GITHUB_REF##*/} stage
         run: sls deploy --verbose --force --stage ${GITHUB_REF##*/}

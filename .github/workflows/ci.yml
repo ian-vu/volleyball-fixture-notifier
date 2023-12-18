@@ -37,3 +37,7 @@ jobs:
         run: pytest test/unit
       - name: Run Integration Test
         run: pytest test/unit
+      - name: Install Deps
+        run: make setup
+      - name: Deploy to ${GITHUB_REF##*/} stage
+        run: sls deploy --verbose --force --stage ${GITHUB_REF##*/}

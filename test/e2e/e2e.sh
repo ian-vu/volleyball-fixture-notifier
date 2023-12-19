@@ -7,4 +7,4 @@ if [[ -z $STAGE ]]
 fi
 
 # Invoke function and expect log line to contain string
-sls invoke --function cronHandler --stage $STAGE --log | grep "Successfully fetched content"
+sls invoke --function cronHandler --stage $STAGE --log | grep "Successfully published message to email."

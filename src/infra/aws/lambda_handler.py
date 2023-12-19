@@ -6,6 +6,9 @@ from aws_lambda_typing.events import SNSEvent
 
 from src.MessageGenerator import MessageGenerator
 from src.Notifier import Notifier
+from src.utils.logger import get_logger
+
+logger = get_logger()
 
 TEAM_NAME = "TICKLE"
 
@@ -15,6 +18,6 @@ message_generator = MessageGenerator()
 
 def run(event: SNSEvent, context: Context) -> None:
     message = message_generator.generate_message(team_name=TEAM_NAME)
+    logger.info(f"Message: {message}")
     notifier.publish(topic=os.environ["SNS_EMAIL_TOPIC"], message=message)
-
-    print(message)
+    logger.info("Successfully published message to email.")

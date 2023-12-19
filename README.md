@@ -1,5 +1,9 @@
 ![CI](https://github.com/ian-vu/volleyball-fixture-notifier/actions/workflows/ci.yml/badge.svg)
 
+# Volleyball Fixture Notifier
+
+This service is a weekly automation that will send a team's volleyball fixture time weekly.
+
 ## Set up
 
 ```commandline

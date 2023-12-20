@@ -2,7 +2,7 @@
 
 # Volleyball Fixture Notifier
 
-This service is a weekly automation that will send a team's volleyball fixture time weekly.
+This service is a weekly automation that will send a team's volleyball fixture time weekly to am email.
 
 ## Infrastructure
 
@@ -19,6 +19,8 @@ Any email subscription that is set up for that topic will be sent the message.
 
 Continuous integration and continious delivery is set up for this service using Github Actions.
 To see configuration see `./github/workflows` folder.
+
+Currently only pushes to the `main` and `dev` branches are configure to run the pipeline.
 
 ## Set up
 

@@ -16,7 +16,7 @@ class MessageGenerator:
         pass
 
     def generate_message(
-            self, team_name: str, html_page: VolleyballHtmlPage | None = None
+        self, team_name: str, html_page: VolleyballHtmlPage | None = None
     ):
         html_page = html_page if html_page else VolleyballHtmlPage()
         table = self._html_page_to_table(html_page)

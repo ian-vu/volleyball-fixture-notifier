@@ -2,7 +2,7 @@
 
 STAGE=$1
 if [[ -z $STAGE ]]
-  then echo "STAGE expectied as first positional argument. STAGE not found.";
+  then echo "STAGE expected as first positional argument. STAGE not found.";
   exit 1;
 fi
 

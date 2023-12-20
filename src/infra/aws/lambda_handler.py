@@ -4,8 +4,8 @@ import boto3
 from aws_lambda_typing.context import Context
 from aws_lambda_typing.events import SNSEvent
 
-from src.MessageGenerator import MessageGenerator
-from src.Notifier import Notifier
+from src.message_generator import MessageGenerator
+from src.notifier import Notifier
 from src.utils.logger import get_logger
 
 logger = get_logger()

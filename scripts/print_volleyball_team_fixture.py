@@ -1,5 +1,5 @@
-from scripts.BaseScript import BaseScript
-from src.MessageGenerator import MessageGenerator
+from scripts.base_script import BaseScript
+from src.message_generator import MessageGenerator
 
 TEAM_NAME = "TICKLE"
 

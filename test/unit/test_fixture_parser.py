@@ -1,5 +1,5 @@
-from FixtureParser import FixtureParser
-from Table import Table
+from fixture_parser import FixtureParser
+from table import Table
 
 mock_table = Table(
     [

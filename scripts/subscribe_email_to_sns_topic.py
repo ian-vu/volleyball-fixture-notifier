@@ -2,7 +2,7 @@ from functools import cache
 
 import boto3
 
-from scripts.BaseScript import BaseScript
+from scripts.base_script import BaseScript
 
 
 class SubscribeEmailToSnsTopic(BaseScript):

@@ -1,4 +1,4 @@
-from MessageGenerator import MessageGenerator
+from message_generator import MessageGenerator
 
 
 def test_message_generator_message():

@@ -2,9 +2,9 @@ from typing import Any
 
 from bs4 import BeautifulSoup, Tag
 
-from src.FixtureParser import FixtureParser
-from src.Table import Table
-from src.VolleyballHtmlPage import VolleyballHtmlPage
+from src.fixture_parser import FixtureParser
+from src.table import Table
+from src.volleyball_html_page import VolleyballHtmlPage
 
 
 class MessageGenerator:
@@ -16,7 +16,7 @@ class MessageGenerator:
         pass
 
     def generate_message(
-        self, team_name: str, html_page: VolleyballHtmlPage | None = None
+            self, team_name: str, html_page: VolleyballHtmlPage | None = None
     ):
         html_page = html_page if html_page else VolleyballHtmlPage()
         table = self._html_page_to_table(html_page)

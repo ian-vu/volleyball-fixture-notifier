@@ -18,7 +18,11 @@ message_generator = MessageGenerator()
 
 # noinspection PyUnusedLocal
 def run(event: SNSEvent, context: Context) -> None:
-    message = message_generator.generate_message(team_name=TEAM_NAME)
+    try:
+        message = message_generator.generate_message(team_name=TEAM_NAME)
+    except Exception as e:
+        message = f"Error while attempting to generate message: {str(e)}"
+
     logger.info(f"Message: {message}")
     notifier.publish(topic=os.environ["SNS_EMAIL_TOPIC"], message=message)
     logger.info("Successfully published message to email.")

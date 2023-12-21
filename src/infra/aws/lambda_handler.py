@@ -16,6 +16,7 @@ notifier = Notifier(sns_client=boto3.client("sns"))
 message_generator = MessageGenerator()
 
 
+# noinspection PyUnusedLocal
 def run(event: SNSEvent, context: Context) -> None:
     message = message_generator.generate_message(team_name=TEAM_NAME)
     logger.info(f"Message: {message}")

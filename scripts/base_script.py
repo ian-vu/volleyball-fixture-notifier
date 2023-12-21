@@ -12,6 +12,8 @@ class Script(Protocol):
 
 
 class BaseScript:
+    description: str
+
     def __init__(self) -> None:
         # Set Singleton logger
         self._logger = get_logger()

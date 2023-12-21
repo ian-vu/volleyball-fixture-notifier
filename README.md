@@ -17,7 +17,7 @@ Any email subscription that is set up for that topic will be sent the message.
 
 ## CI/CD
 
-Continuous integration and continious delivery is set up for this service using Github Actions.
+Continuous integration and continuous delivery is set up for this service using GitHub Actions.
 To see configuration see `./github/workflows` folder.
 
 Currently only pushes to the `main` and `dev` branches are configure to run the pipeline.
@@ -54,7 +54,7 @@ python -m scripts.print_volleyball_team_fixture --help
 
 ### 2. Subscribe Email to SNS Topic
 
-This script will subscribe an provided email to a deployed stack's SNS Topic.
+This script will subscribe a provided email to a deployed stack's SNS Topic.
 
 **How to run**
 
@@ -64,7 +64,7 @@ python -m scripts.subscribe_email_to_sns_topic --help
 
 ## Testing
 
-There are numerous tests written for this project. Unit and Integration tests are writting using `pytest`.
+There are numerous tests written for this project. Unit and Integration tests are writing using `pytest`.
 
 An end to end (e2e) test is written as a bash script that will use the `serverless` cli to invoke a lambda function
 expecting to see

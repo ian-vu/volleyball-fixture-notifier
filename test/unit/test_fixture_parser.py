@@ -1,6 +1,7 @@
 from fixture_parser import FixtureParser
 from table import Table
 
+# noinspection SpellCheckingInspection
 mock_table = Table(
     [
         ["DATE: 29/08/23", "1", "2", "3", "4", "5", "6"],
@@ -50,4 +51,5 @@ def test_team_time():
 
 def test_court():
     assert mock_fixture_parser.court("BAREFOOT") == "3"
+    # noinspection SpellCheckingInspection
     assert mock_fixture_parser.court("BAMYAN") == "1"

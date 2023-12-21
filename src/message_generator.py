@@ -1,5 +1,6 @@
 from typing import Any
 
+# noinspection PyProtectedMember
 from bs4 import BeautifulSoup, Tag
 
 from src.fixture_parser import FixtureParser
@@ -27,6 +28,7 @@ class MessageGenerator:
             f" on court {parser.court(team_name)}"
         )
 
+    # noinspection SpellCheckingInspection
     def _html_page_to_table(self, html_page: VolleyballHtmlPage):
         soup = BeautifulSoup(html_page.contents, "html.parser")
         html_table = soup.find(id="tablepress-2")
@@ -35,6 +37,7 @@ class MessageGenerator:
 
         return Table(cells)
 
+    # noinspection PyMethodMayBeStatic
     def _html_row_contents(self, html_row: Tag) -> list[Any]:
         return [
             html_column.text.strip() for html_column in html_row.findAll(["th", "td"])

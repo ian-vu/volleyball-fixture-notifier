@@ -7,6 +7,7 @@ TEAM_NAME = "TICKLE"
 class PrintVolleyballTeamFixture(BaseScript):
     description = "Print name volleyball time fixture for a team."
 
+    # noinspection PyMethodMayBeStatic
     def run(self):
         message = MessageGenerator().generate_message(TEAM_NAME)
         print(message)

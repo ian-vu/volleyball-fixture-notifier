@@ -5,6 +5,7 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: python3.11
+  # noinspection YAMLSchemaValidation
   region: ${opt:region, self:custom.defaults.region}
   stage: ${opt:stage, self:custom.defaults.stage}
   iam:

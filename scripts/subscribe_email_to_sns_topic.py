@@ -23,7 +23,7 @@ class SubscribeEmailToSnsTopic(BaseScript):
         self._parser.add_argument(
             "-e",
             "--email",
-            help="Email address to subscribe to SNS Topic which will recieve notification.",
+            help="Email address to subscribe to SNS Topic which will receive notification.",
             required=True,
         )
         self._parser.add_argument(
@@ -60,7 +60,8 @@ class SubscribeEmailToSnsTopic(BaseScript):
 
         print("Successful script run.")
         print(
-            f"{self._args.email} is pending subscription to {self._get_sns_topic_arn()}. Subscription email has been send to inbox.\nClick link in email to complete subscription!"
+            f"{self._args.email} is pending subscription to {self._get_sns_topic_arn()}. "
+            f"Subscription email has been send to inbox.\nClick link in email to complete subscription!"
         )
 
 

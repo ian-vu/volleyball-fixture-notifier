@@ -7,4 +7,5 @@ if [[ -z $STAGE ]]
 fi
 
 # Invoke function and expect log line to contain string
+# TODO: Add grepping of actual message
 sls invoke --function cronHandler --stage "$STAGE" --log | grep "Successfully published message to email."

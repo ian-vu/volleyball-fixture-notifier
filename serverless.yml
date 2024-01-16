@@ -28,9 +28,9 @@ functions:
   cronHandler:
     handler: src/infra/aws/lambda_handler.run
     events:
-      # Invoke Lambda function every Sunday at 7pm
+      # Invoke Lambda function every Sunday at 6pm AEST (The configuration is in UTC time, 8pm Sat)
       # https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html
-      - schedule: cron(0 19 ? * SUN *)
+      - schedule: cron(0 20 ? * SAT *)
     environment:
       SNS_EMAIL_TOPIC: !Ref snsEmailTopic
 

@@ -17,9 +17,11 @@ class MessageGenerator:
         pass
 
     def generate_message(
-            self, team_name: str, fixture_html_page: FixtureHtmlPage | None = None
+        self, team_name: str, fixture_html_page: FixtureHtmlPage | None = None
     ):
-        fixture_html_page = fixture_html_page if fixture_html_page else FixtureHtmlPage()
+        fixture_html_page = (
+            fixture_html_page if fixture_html_page else FixtureHtmlPage()
+        )
         table = self._html_page_to_table(fixture_html_page)
         parser = FixtureParser(table)
 

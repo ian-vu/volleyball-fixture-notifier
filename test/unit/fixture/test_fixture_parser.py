@@ -1,5 +1,5 @@
-from fixture_parser import FixtureParser
-from table import Table
+from src.fixture.fixture_parser import FixtureParser
+from src.table import Table
 
 # noinspection SpellCheckingInspection
 mock_table = Table(

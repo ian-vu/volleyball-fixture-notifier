@@ -3,9 +3,9 @@ from typing import Any
 # noinspection PyProtectedMember
 from bs4 import BeautifulSoup, Tag
 
-from src.fixture_parser import FixtureParser
+from src.fixture.fixture_html_page import FixtureHtmlPage
+from src.fixture.fixture_parser import FixtureParser
 from src.table import Table
-from src.volleyball_html_page import VolleyballHtmlPage
 
 
 class MessageGenerator:
@@ -17,10 +17,10 @@ class MessageGenerator:
         pass
 
     def generate_message(
-        self, team_name: str, html_page: VolleyballHtmlPage | None = None
+            self, team_name: str, fixture_html_page: FixtureHtmlPage | None = None
     ):
-        html_page = html_page if html_page else VolleyballHtmlPage()
-        table = self._html_page_to_table(html_page)
+        fixture_html_page = fixture_html_page if fixture_html_page else FixtureHtmlPage()
+        table = self._html_page_to_table(fixture_html_page)
         parser = FixtureParser(table)
 
         return (
@@ -29,8 +29,8 @@ class MessageGenerator:
         )
 
     # noinspection SpellCheckingInspection
-    def _html_page_to_table(self, html_page: VolleyballHtmlPage):
-        soup = BeautifulSoup(html_page.contents, "html.parser")
+    def _html_page_to_table(self, fixture_html_page: FixtureHtmlPage):
+        soup = BeautifulSoup(fixture_html_page.contents, "html.parser")
         html_table = soup.find(id="tablepress-2")
         html_rows = html_table.findAll("tr")
         cells = [self._html_row_contents(html_row) for html_row in html_rows]

@@ -6,7 +6,7 @@ logger = get_logger()
 VOLLEYBALL_URL = "https://reboundibv.com.au/fixture"
 
 
-class VolleyballHtmlPage:
+class FixtureHtmlPage:
     """
     Holds the contents of the Volleyball fixture HTML page.
     This class allows for dependency injection for testing. By default, it will make a HTTP request
@@ -14,7 +14,7 @@ class VolleyballHtmlPage:
     """
 
     def __init__(self, contents: str | None = None):
-        self.contents = contents if contents else self._request_content()
+        self.contents: str = contents if contents else self._request_content()
 
     # noinspection PyMethodMayBeStatic
     def _request_content(self) -> str:
@@ -22,8 +22,8 @@ class VolleyballHtmlPage:
         # noinspection SpellCheckingInspection
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-            " AppleWebKit/537.36 (KHTML, like Gecko)"
-            " Chrome/116.0.0.0 Safari/537.36"
+                          " AppleWebKit/537.36 (KHTML, like Gecko)"
+                          " Chrome/116.0.0.0 Safari/537.36"
         }
         response = requests.get(VOLLEYBALL_URL, headers=headers)
 

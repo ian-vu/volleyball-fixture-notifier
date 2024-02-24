@@ -1,7 +1,7 @@
 import os
 
-from message_generator import MessageGenerator
-from volleyball_html_page import VolleyballHtmlPage
+from src.fixture.fixture_html_page import FixtureHtmlPage
+from src.message_generator import MessageGenerator
 
 
 def get_mock_fixture_page_content():
@@ -14,11 +14,11 @@ def get_mock_fixture_page_content():
 
 def test_message_generator_message():
     mock_html_page_content = get_mock_fixture_page_content()
-    mock_html_page = VolleyballHtmlPage(mock_html_page_content)
+    mock_html_page = FixtureHtmlPage(mock_html_page_content)
 
     assert (
         MessageGenerator().generate_message(
-            team_name="I DON’T LIKE SAND", html_page=mock_html_page
+            team_name="I DON’T LIKE SAND", fixture_html_page=mock_html_page
         )
         == "This week's game DATE: 29/08/23 at 6:45 PM on court 4"
     )

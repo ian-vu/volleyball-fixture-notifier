@@ -1,6 +1,6 @@
 import pytest
 
-from table import Table, OutOfBoundsException, NotFoundException
+from src.table import Table, OutOfBoundsException, NotFoundException
 
 mock_table = Table([["0", "1", "2"], ["3", "4", "5"]])
 

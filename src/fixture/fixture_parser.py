@@ -25,7 +25,7 @@ class FixtureParser:
 
     def opponent(self, team_name: str) -> str:
         row, column = self._table.get_position_matching_str(team_name)
-        team_1, team_2 = self._table.cells[row][column].split("\nV\n")
+        team_1, team_2 = self._table.cells[row][column].replace('\t', '').split("\nV\n")
 
         if team_name.lower() in team_1.lower():
             return team_2

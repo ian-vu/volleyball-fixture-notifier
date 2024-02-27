@@ -15,7 +15,7 @@ upgrade:
 upgrade-all: upgrade-dev upgrade
 
 format-check:
-	black --check .
+	black --check --extend-exclude=.venv .
 
 format:
 	black . --extend-exclude=.venv

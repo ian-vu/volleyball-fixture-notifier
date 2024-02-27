@@ -22,3 +22,12 @@ class FixtureParser:
     def court(self, team_name: str) -> str:
         _, column = self._table.get_position_matching_str(team_name)
         return self._table.column_heading(column)
+
+    def opponent(self, team_name: str) -> str:
+        row, column = self._table.get_position_matching_str(team_name)
+        team_1, team_2 = self._table.cells[row][column].split("\nV\n")
+
+        if team_name.lower() in team_1.lower():
+            return team_2
+        else:
+            return team_1

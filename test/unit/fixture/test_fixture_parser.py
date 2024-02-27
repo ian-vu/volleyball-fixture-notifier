@@ -53,3 +53,8 @@ def test_court():
     assert mock_fixture_parser.court("BAREFOOT") == "3"
     # noinspection SpellCheckingInspection
     assert mock_fixture_parser.court("BAMYAN") == "1"
+
+
+def test_opponent():
+    assert mock_fixture_parser.opponent("BAREFOOT") == "BIG SITUATION"
+    assert mock_fixture_parser.opponent("APPA") == "BAMYAN"

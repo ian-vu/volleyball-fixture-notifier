@@ -5,7 +5,7 @@ from src.message_generator import MessageGenerator
 from src.score.score_html_page import ScoreHtmlPage
 
 
-def get_mock_fixture_page_content(file_name: str) -> str:
+def _get_mock_fixture_page_content(file_name: str) -> str:
     path_to_current_file = os.path.realpath(__file__)
     current_directory = os.path.split(path_to_current_file)[0]
     path_to_file = os.path.join(current_directory, f"mock_data/{file_name}")
@@ -14,10 +14,10 @@ def get_mock_fixture_page_content(file_name: str) -> str:
 
 
 def test_message_generator_message():
-    mock_fixture_page_content = get_mock_fixture_page_content("fixture_page.html")
+    mock_fixture_page_content = _get_mock_fixture_page_content("fixture_page.html")
     mock_fixture_html_page = FixtureHtmlPage(mock_fixture_page_content)
 
-    mock_score_page_content = get_mock_fixture_page_content("score_page.html")
+    mock_score_page_content = _get_mock_fixture_page_content("score_page.html")
     mock_score_html_page = ScoreHtmlPage(mock_score_page_content)
 
     assert (

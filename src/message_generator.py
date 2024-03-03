@@ -1,7 +1,7 @@
 # noinspection PyProtectedMember
 
-from src.fixture_page import FixturePage
-from src.score_page import ScorePage
+from src.pages.fixture_page import FixturePage
+from src.pages.score_page import ScorePage
 
 
 class MessageGenerator:

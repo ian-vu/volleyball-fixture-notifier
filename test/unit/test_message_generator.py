@@ -1,8 +1,8 @@
 import os
 
-from src.fixture_page import FixturePage
 from src.message_generator import MessageGenerator
-from src.score_page import ScorePage
+from src.pages.fixture_page import FixturePage
+from src.pages.score_page import ScorePage
 
 
 def _get_mock_fixture_page_content(file_name: str) -> str:

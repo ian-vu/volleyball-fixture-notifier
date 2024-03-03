@@ -1,5 +1,6 @@
-from src.fixture_page import FixturePage
 import os
+
+from src.pages.fixture_page import FixturePage
 
 
 def _get_mock_html_page_content(file_name: str) -> str:

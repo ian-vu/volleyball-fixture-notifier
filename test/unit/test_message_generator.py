@@ -21,11 +21,11 @@ def test_message_generator_message():
     mock_score_html_page = ScorePage(contents=mock_score_page_content)
 
     assert (
-            MessageGenerator().generate_message(
-                team_name="TICKLE TOES",
-                fixture_page=mock_fixture_html_page,
-                score_page=mock_score_html_page,
-            )
-            == "This week's game DATE: 27/02/24 at 7:30 PM on court 5.\n\nWe are currently placed 2nd.\n\nWe will be "
-               "versing BAREFOOT BALLERS who are currently 1st."
+        MessageGenerator().generate_message(
+            team_name="TICKLE TOES",
+            fixture_page=mock_fixture_html_page,
+            score_page=mock_score_html_page,
+        )
+        == "This week's game DATE: 27/02/24 at 7:30 PM on court 5.\n\nWe are currently placed 2nd.\n\nWe will be "
+        "versing BAREFOOT BALLERS who are currently 1st."
     )

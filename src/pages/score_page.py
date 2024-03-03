@@ -31,7 +31,7 @@ class ScorePage:
     _URL: str = "https://reboundibv.com.au/scores/"
 
     def __init__(
-            self, *, table_id: str = "tablepress-26", contents: str | bytes | None = None
+        self, *, table_id: str = "tablepress-26", contents: str | bytes | None = None
     ):
         self._contents = contents if contents else self._request_content()
         self._table_id = table_id
@@ -57,8 +57,8 @@ class ScorePage:
         # noinspection SpellCheckingInspection
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-                          " AppleWebKit/537.36 (KHTML, like Gecko)"
-                          " Chrome/116.0.0.0 Safari/537.36"
+            " AppleWebKit/537.36 (KHTML, like Gecko)"
+            " Chrome/116.0.0.0 Safari/537.36"
         }
         response = requests.get(self._URL, headers=headers)
 

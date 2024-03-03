@@ -8,7 +8,7 @@ class Table:
     def __init__(self, cells: Cells | None = None):
         self.cells: Cells = cells if cells is not None else []
 
-    def get_position_matching_str(self, string: str) -> Position | None:
+    def get_position_matching_str(self, string: str) -> Position:
         for i, row in enumerate(self.cells):
             for j, cell in enumerate(row):
                 if string.lower() in cell.lower():

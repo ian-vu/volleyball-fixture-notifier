@@ -33,7 +33,7 @@ class ScorePage:
     def __init__(
             self, *, table_id: str = "tablepress-26", contents: str | bytes | None = None
     ):
-        self._contents: str = contents if contents else self._request_content()
+        self._contents = contents if contents else self._request_content()
         self._table_id = table_id
         self._table = self._get_html_table()
 
@@ -51,16 +51,8 @@ class ScorePage:
             html_column.text.strip() for html_column in html_row.findAll(["th", "td"])
         ]
 
-    def _get_html_table(self):
-        soup = BeautifulSoup(self._contents, "html.parser")
-        html_table = soup.find(id=self._table_id)
-        html_rows = html_table.findAll("tr")
-        cells = [self._html_row_contents(html_row) for html_row in html_rows]
-
-        return Table(cells)
-
     # noinspection PyMethodMayBeStatic
-    def _request_content(self) -> str:
+    def _request_content(self) -> str | bytes:
         logger.info("Fetching HTTP content...")
         # noinspection SpellCheckingInspection
         headers = {

@@ -26,7 +26,7 @@ plugins:
 
 functions:
   cronHandler:
-    handler: src/infra/aws/lambda_handler.run
+    handler: infra/aws/lambda_handler.run
     events:
       # Invoke Lambda function every Sunday at 7pm AEST (The configuration is in UTC time)
       # https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html

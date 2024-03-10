@@ -31,7 +31,7 @@ class ScorePage:
     _URL: str = "https://reboundibv.com.au/scores/"
 
     def __init__(
-            self, *, table_id: str = "tablepress-26", contents: str | bytes | None = None
+        self, *, table_id: str = "tablepress-26", contents: str | bytes | None = None
     ):
         self._contents = contents if contents else self._request_content()
         self._table_id = table_id
@@ -52,7 +52,8 @@ class ScorePage:
     # noinspection PyMethodMayBeStatic
     def _html_row_contents(self, html_row: Tag) -> list[any]:
         return [
-            self._clean_text(html_column.text) for html_column in html_row.findAll(["th", "td"])
+            self._clean_text(html_column.text)
+            for html_column in html_row.findAll(["th", "td"])
         ]
 
     # noinspection PyMethodMayBeStatic
@@ -61,8 +62,8 @@ class ScorePage:
         # noinspection SpellCheckingInspection
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-                          " AppleWebKit/537.36 (KHTML, like Gecko)"
-                          " Chrome/116.0.0.0 Safari/537.36"
+            " AppleWebKit/537.36 (KHTML, like Gecko)"
+            " Chrome/116.0.0.0 Safari/537.36"
         }
         response = requests.get(self._URL, headers=headers)
 

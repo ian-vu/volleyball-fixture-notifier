@@ -13,10 +13,10 @@ class MessageGenerator:
         pass
 
     def generate_message(
-            self,
-            team_name: str,
-            fixture_page: FixturePage | None = None,
-            score_page: ScorePage | None = None,
+        self,
+        team_name: str,
+        fixture_page: FixturePage | None = None,
+        score_page: ScorePage | None = None,
     ):
         fixture_page = fixture_page if fixture_page else FixturePage()
 

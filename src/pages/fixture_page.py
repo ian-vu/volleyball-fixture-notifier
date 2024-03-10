@@ -16,7 +16,7 @@ class FixturePage:
     """
 
     def __init__(
-        self, *, table_id: str = "tablepress-2", contents: str | bytes | None = None
+            self, *, table_id: str = "tablepress-2", contents: str | bytes | None = None
     ) -> None:
         self._contents: str | bytes = contents if contents else self._request_content()
         self._table_id: str = table_id
@@ -28,8 +28,8 @@ class FixturePage:
         # noinspection SpellCheckingInspection
         headers = {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
-            " AppleWebKit/537.36 (KHTML, like Gecko)"
-            " Chrome/116.0.0.0 Safari/537.36"
+                          " AppleWebKit/537.36 (KHTML, like Gecko)"
+                          " Chrome/116.0.0.0 Safari/537.36"
         }
         response = requests.get(VOLLEYBALL_URL, headers=headers)
 
@@ -43,10 +43,13 @@ class FixturePage:
         logger.info("Successfully fetched Fixture content")
         return response.content
 
+    def _clean_text(self, text: str) -> str:
+        return text.strip().replace("’", "'")
+
     # noinspection PyMethodMayBeStatic
-    def _html_row_contents(self, html_row: Tag) -> list[any]:
+    def _html_row_contents(self, html_row: Tag) -> list[str]:
         return [
-            html_column.text.strip() for html_column in html_row.findAll(["th", "td"])
+            self._clean_text(html_column.text) for html_column in html_row.findAll(["th", "td"])
         ]
 
     def _get_html_table(self):

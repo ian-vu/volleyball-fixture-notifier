@@ -13,17 +13,23 @@ class MessageGenerator:
         pass
 
     def generate_message(
-        self,
-        team_name: str,
-        fixture_page: FixturePage | None = None,
-        score_page: ScorePage | None = None,
+            self,
+            team_name: str,
+            fixture_page: FixturePage | None = None,
+            score_page: ScorePage | None = None,
     ):
         fixture_page = fixture_page if fixture_page else FixturePage()
-        score_page = score_page if score_page else ScorePage()
 
-        opponent_name = fixture_page.opponent(team_name)
-        opponent_score = score_page.score(opponent_name)
-        team_score = score_page.score(team_name)
+        try:
+            score_page = score_page if score_page else ScorePage()
+            opponent_name = fixture_page.opponent(team_name)
+            opponent_score = score_page.score(opponent_name)
+            team_score = score_page.score(team_name)
+        except:
+            return (
+                f"This week's game {fixture_page.date()} at {fixture_page.team_time(team_name)}"
+                f" on court {fixture_page.court(team_name)}.\n\n"
+            )
 
         return (
             f"This week's game {fixture_page.date()} at {fixture_page.team_time(team_name)}"

@@ -47,7 +47,7 @@ class FixturePage:
         return text.strip().replace("’", "'")
 
     # noinspection PyMethodMayBeStatic
-    def _html_row_contents(self, html_row: Tag) -> list[str]:
+    def _html_row_contents(self, html_row: Tag) -> list[any]:
         return [
             self._clean_text(html_column.text) for html_column in html_row.findAll(["th", "td"])
         ]
